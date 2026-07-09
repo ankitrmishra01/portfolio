@@ -13,13 +13,15 @@ setTheme(saved);
 function setTheme(t) {
   html.setAttribute('data-theme', t);
   localStorage.setItem('am-theme', t);
-  themeIcon.textContent = t === 'dark' ? '☀' : '◑';
+  if (themeIcon) themeIcon.textContent = t === 'dark' ? '☀' : '◑';
 }
 
-themeBtn.addEventListener('click', () => {
-  const cur = html.getAttribute('data-theme');
-  setTheme(cur === 'dark' ? 'light' : 'dark');
-});
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const cur = html.getAttribute('data-theme');
+    setTheme(cur === 'dark' ? 'light' : 'dark');
+  });
+}
 
 // ===== PAGE NAVIGATION (WORKING) =====
 const pages = document.querySelectorAll('.page');
@@ -72,17 +74,17 @@ const mobMenu = document.getElementById('mobMenu');
 const mobOverlay = document.getElementById('mobOverlay');
 const mobClose = document.getElementById('mobClose');
 
-hamburger.addEventListener('click', openMobileMenu);
-mobClose.addEventListener('click', closeMobileMenu);
-mobOverlay.addEventListener('click', closeMobileMenu);
+if (hamburger) hamburger.addEventListener('click', openMobileMenu);
+if (mobClose) mobClose.addEventListener('click', closeMobileMenu);
+if (mobOverlay) mobOverlay.addEventListener('click', closeMobileMenu);
 
 function openMobileMenu() {
-  mobMenu.classList.add('open');
-  mobOverlay.classList.add('open');
+  if (mobMenu) mobMenu.classList.add('open');
+  if (mobOverlay) mobOverlay.classList.add('open');
 }
 function closeMobileMenu() {
-  mobMenu.classList.remove('open');
-  mobOverlay.classList.remove('open');
+  if (mobMenu) mobMenu.classList.remove('open');
+  if (mobOverlay) mobOverlay.classList.remove('open');
 }
 
 // Canvas particles removed to prevent null reference error
@@ -128,28 +130,36 @@ let mx = 0, my = 0, rx = 0, ry = 0;
 
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
+  if (cursor) {
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  }
 });
 
 (function followRing() {
   rx += (mx - rx) * 0.12;
   ry += (my - ry) * 0.12;
-  cursorRing.style.left = rx + 'px';
-  cursorRing.style.top = ry + 'px';
+  if (cursorRing) {
+    cursorRing.style.left = rx + 'px';
+    cursorRing.style.top = ry + 'px';
+  }
   requestAnimationFrame(followRing);
 })();
 
 document.querySelectorAll('a, button, .proj-card, .cert-card, .ach-card, .skill-item').forEach(el => {
   el.addEventListener('mouseenter', () => {
-    cursor.style.transform = 'translate(-50%,-50%) scale(2.2)';
-    cursorRing.style.transform = 'translate(-50%,-50%) scale(1.6)';
-    cursorRing.style.opacity = '0.2';
+    if (cursor) cursor.style.transform = 'translate(-50%,-50%) scale(2.2)';
+    if (cursorRing) {
+      cursorRing.style.transform = 'translate(-50%,-50%) scale(1.6)';
+      cursorRing.style.opacity = '0.2';
+    }
   });
   el.addEventListener('mouseleave', () => {
-    cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-    cursorRing.style.transform = 'translate(-50%,-50%) scale(1)';
-    cursorRing.style.opacity = '0.45';
+    if (cursor) cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+    if (cursorRing) {
+      cursorRing.style.transform = 'translate(-50%,-50%) scale(1)';
+      cursorRing.style.opacity = '0.45';
+    }
   });
 });
 
@@ -163,6 +173,7 @@ const typeEl = document.getElementById('typeText');
 let pi = 0, ci = 0, del = false;
 
 function type() {
+  if (!typeEl) return;
   const ph = phrases[pi];
   typeEl.textContent = del
     ? ph.substring(0, ci - 1)
@@ -174,7 +185,7 @@ function type() {
   else if (del && ci === 0) { del = false; pi = (pi + 1) % phrases.length; wait = 350; }
   setTimeout(type, wait);
 }
-type();
+if (typeEl) type();
 
 // ===== CODE EDITOR TYPING EFFECT =====
 const codePhrases = [
@@ -332,17 +343,7 @@ cfils.forEach(btn => {
 });
 
 // ===== CONTACT FORM =====
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const name  = document.getElementById('fName').value;
-  const email = document.getElementById('fEmail').value;
-  const subj  = document.getElementById('fSubj').value || 'Portfolio Contact';
-  const msg   = document.getElementById('fMsg').value;
-  const body  = `Hi Ankit,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`;
-  window.location.href = `mailto:ankitrmishra01@gmail.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
-  toast('📬 Opening mail client...');
-});
+// Obsolete submit handler removed
 
 // ===== TOAST =====
 function toast(msg, dur = 3000) {
