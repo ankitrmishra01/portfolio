@@ -654,6 +654,7 @@
       background: linear-gradient(135deg, rgba(99,202,255,0.04) 0%, transparent 60%);
       opacity:0;
       transition: opacity .25s;
+      pointer-events: none;
     }
     .proj-card:hover { border-color: rgba(99,202,255,0.3); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
     .proj-card:hover::before { opacity: 1; }
@@ -1136,11 +1137,18 @@
     </div>
 
     <div class="home-right">
-      <div class="hero-img-wrap">
-        <div class="orb o1"></div>
-        <div class="orb o2"></div>
-        <div class="orb o3"></div>
-        <img src="assets/avatar.png" alt="Ankit Mishra" class="avatar" />
+      <div class="avatar-wrap">
+        <div class="avatar-glow"></div>
+        <div class="avatar-ring ar1"></div>
+        <div class="avatar-ring ar2"></div>
+        <div class="avatar-img-container">
+          <img src="assets/avatar.png" alt="Ankit Mishra" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+        </div>
+        
+        <div class="float-badge fb1">💻 Full-Stack Dev</div>
+        <div class="float-badge fb2">🤖 AI Enthusiast</div>
+        <div class="float-badge fb3">🚀 Problem Solver</div>
+        <div class="float-badge fb4">💡 Creative</div>
       </div>
     </div>
   </div>
