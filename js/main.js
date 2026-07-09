@@ -32,7 +32,7 @@ function showPage(name) {
   document.querySelectorAll('.mob-nav-btn').forEach(b => b.classList.remove('active'));
 
   // Show target page
-  const target = document.getElementById('page-' + name);
+  const target = document.getElementById('pg-' + name);
   if (target) {
     target.classList.add('active');
     window.scrollTo(0, 0);
