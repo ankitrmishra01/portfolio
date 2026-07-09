@@ -3,30 +3,41 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ankit Mishra's Portfolio - AI Engineer and Full Stack Developer building AI-powered systems and robust web apps."/>
+  <meta name="keywords" content="Ankit Mishra, AI Engineer, Full Stack Developer, Parul University, Web Development, Machine Learning, Portfolio"/>
+  <meta name="author" content="Ankit Mishra"/>
+  <meta property="og:title" content="Ankit Mishra — AI Engineer & Full Stack Developer"/>
+  <meta property="og:description" content="Explore Ankit Mishra's portfolio featuring projects in AI, Full Stack development, and data analysis."/>
+  <meta property="og:type" content="website"/>
   <title>Ankit Mishra — AI Engineer & Full Stack Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,300;0,700;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #060910;
-      --bg2: #0b1120;
-      --bg3: #111827;
-      --glass: rgba(255,255,255,0.04);
-      --glass2: rgba(255,255,255,0.07);
-      --border: rgba(255,255,255,0.08);
-      --border2: rgba(99,202,255,0.25);
-      --text: #f0f6ff;
-      --text2: #8BA4C0;
-      --text3: #4a607a;
-      --teal: #63caff;
-      --teal2: #a8edff;
-      --violet: #c084fc;
-      --green: #4ade80;
+      --bg: #0a0a0f;
+      --bg2: #12121a;
+      --bg3: #1a1a24;
+      --glass: rgba(255, 255, 255, 0.05);
+      --glass2: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.1);
+      --border2: rgba(34, 211, 238, 0.3);
+      --text: #EDEDF0;
+      --text2: #A1A1AA;
+      --text3: #71717A;
+      --teal: #22D3EE;
+      --teal2: #67E8F9;
+      --violet: #7C3AED;
+      --green: #10B981;
       --amber: #fbbf24;
-      --ff: 'Plus Jakarta Sans', sans-serif;
+      --accent-grad: linear-gradient(135deg, var(--teal), var(--violet));
+      --ff: 'Inter', sans-serif;
       --ff-mono: 'JetBrains Mono', monospace;
       --nav-h: 68px;
       --radius: 16px;
@@ -169,16 +180,17 @@
     .orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(80px);
-      animation: drift 12s ease-in-out infinite;
+      filter: blur(120px);
+      animation: drift 15s ease-in-out infinite;
+      opacity: 0.6;
     }
-    .orb1 { width:500px; height:500px; background:rgba(99,202,255,0.06); top:-100px; left:-100px; animation-delay:0s; }
-    .orb2 { width:400px; height:400px; background:rgba(192,132,252,0.05); bottom:-100px; right:0; animation-delay:-5s; }
-    .orb3 { width:300px; height:300px; background:rgba(74,222,128,0.04); top:40%; left:40%; animation-delay:-3s; }
+    .orb1 { width:600px; height:600px; background:rgba(34, 211, 238, 0.15); top:-150px; left:-150px; animation-delay:0s; } /* Cyan */
+    .orb2 { width:500px; height:500px; background:rgba(124, 58, 237, 0.15); bottom:-150px; right:-100px; animation-delay:-5s; } /* Violet */
+    .orb3 { width:400px; height:400px; background:rgba(16, 185, 129, 0.15); top:30%; left:30%; animation-delay:-8s; } /* Emerald */
     @keyframes drift {
       0%,100% { transform: translate(0,0) scale(1); }
-      33% { transform: translate(30px,-20px) scale(1.05); }
-      66% { transform: translate(-20px,15px) scale(0.97); }
+      33% { transform: translate(60px,-40px) scale(1.1); }
+      66% { transform: translate(-40px,30px) scale(0.9); }
     }
 
     .home-wrap {
@@ -278,8 +290,8 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: var(--teal);
-      color: var(--bg);
+      background: var(--accent-grad);
+      color: #000;
       border: none;
       font-family: var(--ff);
       font-size: 14px;
@@ -290,7 +302,7 @@
       transition: all .2s;
       letter-spacing: .3px;
     }
-    .btn-primary:hover { background: var(--teal2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,202,255,0.3); }
+    .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,211,238,0.3); }
     .btn-outline {
       background: var(--glass);
       color: var(--text);
@@ -975,12 +987,70 @@
     @media (max-width: 600px) {
       .proj-grid { grid-template-columns: 1fr; }
     }
+
+    /* Progress & Back To Top */
+    .scroll-progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: transparent;
+      z-index: 9999;
+    }
+    .scroll-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--teal);
+      box-shadow: 0 0 10px var(--teal);
+      transition: width 0.1s;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s, background 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
   </style>
 </head>
 <body>
 
 <div id="cur"></div>
 <div id="cur-ring"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress-container">
+  <div class="scroll-progress-bar" id="progressBar"></div>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-8 8h6v8h4v-8h6z"/></svg>
+</button>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -1034,18 +1104,21 @@
       </div>
       <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
       <p class="hero-bio">
-        BTech CSE (AI) @ Parul University · CGPA <strong style="color:var(--text)">8.4</strong><br>
+        BTech CSE (AI) @ Parul University · CGPA <strong style="color:var(--text)">8.45</strong><br>
         Building AI-powered systems, full-stack apps &amp; cloud solutions that ship.
       </p>
       <div class="hero-stats">
-        <div class="stat-item"><div class="stat-num">8.4</div><div class="stat-label">CGPA</div></div>
-        <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">Projects</div></div>
+        <div class="stat-item"><div class="stat-num">8.45</div><div class="stat-label">CGPA</div></div>
+        <div class="stat-item"><div class="stat-num">9+</div><div class="stat-label">Projects</div></div>
         <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Certs</div></div>
-        <div class="stat-item"><div class="stat-num">3rd</div><div class="stat-label">Year</div></div>
+        <div class="stat-item"><div class="stat-num">4th</div><div class="stat-label">Year</div></div>
       </div>
       <div class="hero-btns">
         <button class="btn-primary" onclick="showPage('projects')">View Projects →</button>
         <button class="btn-outline" onclick="showPage('contact')">Hire Me ↗</button>
+        <a href="Ankit_Mishra_Resume.pdf" target="_blank" class="btn-outline" style="display:inline-flex;align-items:center;gap:6px;">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> Resume (PDF)
+        </a>
       </div>
       <div class="social-row">
         <a href="https://github.com/ankitrmishra01" target="_blank" class="social-link">
@@ -1061,168 +1134,27 @@
     </div>
 
     <div class="home-right">
-      <div class="avatar-wrap">
-        <div class="avatar-glow"></div>
-        <div class="avatar-ring ar1"></div>
-        <div class="avatar-ring ar2"></div>
-        <div class="avatar-img-container">
-          <!-- Pixar-style 3D character matching reference photo -->
-          <svg viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg" class="avatar-svg-wrap">
-            <defs>
-              <radialGradient id="skinG" cx="50%" cy="35%" r="65%">
-                <stop offset="0%" stop-color="#fce8d5"/>
-                <stop offset="60%" stop-color="#f0c9a0"/>
-                <stop offset="100%" stop-color="#d4956a"/>
-              </radialGradient>
-              <radialGradient id="skinCheek" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#f4a07a" stop-opacity="0.5"/>
-                <stop offset="100%" stop-color="#f4a07a" stop-opacity="0"/>
-              </radialGradient>
-              <linearGradient id="hairG" x1="20%" y1="0%" x2="80%" y2="100%">
-                <stop offset="0%" stop-color="#1a0e00"/>
-                <stop offset="40%" stop-color="#2d1a00"/>
-                <stop offset="100%" stop-color="#0d0800"/>
-              </linearGradient>
-              <linearGradient id="jacketG" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#2563eb"/>
-                <stop offset="100%" stop-color="#1e40af"/>
-              </linearGradient>
-              <linearGradient id="innerG" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#374151"/>
-                <stop offset="100%" stop-color="#1f2937"/>
-              </linearGradient>
-              <radialGradient id="bgCircle" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#1a2744"/>
-                <stop offset="100%" stop-color="#0b1425"/>
-              </radialGradient>
-              <filter id="softBlur">
-                <feGaussianBlur stdDeviation="1.5"/>
-              </filter>
-              <filter id="shadow">
-                <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(0,0,0,0.6)"/>
-              </filter>
-              <clipPath id="circleClip">
-                <circle cx="170" cy="190" r="165"/>
-              </clipPath>
-            </defs>
-
-            <!-- Background -->
-            <circle cx="170" cy="190" r="165" fill="url(#bgCircle)"/>
-            <!-- Subtle code snippets in bg -->
-            <text x="18" y="55" font-family="monospace" font-size="9" fill="rgba(99,202,255,0.2)">&lt;AI/&gt;</text>
-            <text x="270" y="75" font-family="monospace" font-size="8" fill="rgba(99,202,255,0.15)">def()</text>
-            <text x="12" y="300" font-family="monospace" font-size="8" fill="rgba(192,132,252,0.15)">{js}</text>
-            <text x="278" y="320" font-family="monospace" font-size="8" fill="rgba(99,202,255,0.15)">async</text>
-            <text x="22" y="340" font-family="monospace" font-size="7" fill="rgba(74,222,128,0.15)">import</text>
-
-            <g clip-path="url(#circleClip)">
-              <!-- Body / Jacket - larger for Pixar style -->
-              <!-- Jacket outer -->
-              <ellipse cx="170" cy="420" rx="150" ry="100" fill="url(#jacketG)" filter="url(#shadow)"/>
-              <!-- Inner shirt/hoodie -->
-              <ellipse cx="170" cy="410" rx="90" ry="95" fill="url(#innerG)"/>
-              <!-- Jacket lapels -->
-              <path d="M120 310 Q140 330 155 300 Q165 330 170 310 Q175 330 185 300 Q200 330 220 310 L235 420 Q170 450 105 420 Z" fill="url(#jacketG)" opacity="0.9"/>
-              <!-- Jacket collar detail -->
-              <path d="M148 305 L170 330 L192 305" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round"/>
-              <!-- Hoodie beneath -->
-              <path d="M138 308 Q155 295 170 302 Q185 295 202 308" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-linecap="round"/>
-
-              <!-- Neck -->
-              <rect x="152" y="270" width="36" height="42" rx="12" fill="url(#skinG)"/>
-
-              <!-- Head - large, round, Pixar-style -->
-              <ellipse cx="170" cy="195" rx="85" ry="92" fill="url(#skinG)" filter="url(#shadow)"/>
-
-              <!-- Cheek blush -->
-              <ellipse cx="115" cy="215" rx="20" ry="14" fill="url(#skinCheek)"/>
-              <ellipse cx="225" cy="215" rx="20" ry="14" fill="url(#skinCheek)"/>
-
-              <!-- Hair - swept/tousled like reference -->
-              <!-- Main hair mass -->
-              <ellipse cx="170" cy="130" rx="87" ry="70" fill="url(#hairG)"/>
-              <!-- Hair top swept left -->
-              <path d="M90 145 Q100 95 130 80 Q155 68 175 72 Q200 70 215 85 Q230 100 235 130 Q238 155 235 175 Q220 155 200 145 Q175 140 150 145 Q120 150 95 165 Z" fill="url(#hairG)"/>
-              <!-- Swept forelock - like the Pixar character -->
-              <path d="M100 120 Q115 85 145 78 Q120 72 100 90 Q82 108 85 135 Z" fill="#1a0e00" opacity="0.8"/>
-              <path d="M158 70 Q185 60 210 78 Q195 65 175 65 Q162 65 155 72 Z" fill="url(#hairG)"/>
-              <!-- Side bits -->
-              <path d="M85 160 Q80 175 84 195 Q86 180 92 168 Z" fill="url(#hairG)"/>
-              <path d="M255 160 Q260 175 256 195 Q254 180 248 168 Z" fill="url(#hairG)"/>
-              <!-- Hair highlight/sheen -->
-              <path d="M130 88 Q165 75 195 88" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4" stroke-linecap="round"/>
-
-              <!-- Ears -->
-              <ellipse cx="87" cy="208" rx="13" ry="17" fill="url(#skinG)"/>
-              <ellipse cx="253" cy="208" rx="13" ry="17" fill="url(#skinG)"/>
-              <ellipse cx="87" cy="208" rx="8" ry="11" fill="#d4956a" opacity="0.35"/>
-              <ellipse cx="253" cy="208" rx="8" ry="11" fill="#d4956a" opacity="0.35"/>
-
-              <!-- Glasses frames - round like reference -->
-              <!-- Left lens -->
-              <circle cx="147" cy="198" r="22" fill="rgba(255,255,255,0.04)" stroke="#2d2d3a" stroke-width="4"/>
-              <circle cx="147" cy="198" r="22" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-              <!-- Right lens -->
-              <circle cx="193" cy="198" r="22" fill="rgba(255,255,255,0.04)" stroke="#2d2d3a" stroke-width="4"/>
-              <circle cx="193" cy="198" r="22" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-              <!-- Bridge -->
-              <path d="M169 198 Q170 196 171 198" fill="none" stroke="#2d2d3a" stroke-width="4" stroke-linecap="round"/>
-              <!-- Temple arms -->
-              <line x1="87" y1="198" x2="125" y2="198" stroke="#2d2d3a" stroke-width="3.5" stroke-linecap="round"/>
-              <line x1="215" y1="198" x2="253" y2="198" stroke="#2d2d3a" stroke-width="3.5" stroke-linecap="round"/>
-              <!-- Lens sheen -->
-              <ellipse cx="140" cy="191" rx="8" ry="5" fill="rgba(255,255,255,0.08)" transform="rotate(-20,140,191)"/>
-              <ellipse cx="186" cy="191" rx="8" ry="5" fill="rgba(255,255,255,0.08)" transform="rotate(-20,186,191)"/>
-
-              <!-- Eyes behind glasses -->
-              <!-- Left eye -->
-              <ellipse cx="147" cy="199" rx="11" ry="9" fill="white"/>
-              <circle cx="147" cy="200" r="7" fill="#1a0800"/>
-              <circle cx="147" cy="200" r="5" fill="#2d1200"/>
-              <circle cx="147" cy="200" r="3" fill="#0a0500"/>
-              <circle cx="150" cy="197" r="1.8" fill="white"/>
-              <!-- Right eye -->
-              <ellipse cx="193" cy="199" rx="11" ry="9" fill="white"/>
-              <circle cx="193" cy="200" r="7" fill="#1a0800"/>
-              <circle cx="193" cy="200" r="5" fill="#2d1200"/>
-              <circle cx="193" cy="200" r="3" fill="#0a0500"/>
-              <circle cx="196" cy="197" r="1.8" fill="white"/>
-
-              <!-- Eyebrows above glasses -->
-              <path d="M128 174 Q140 166 155 170" stroke="#1a0800" stroke-width="4" fill="none" stroke-linecap="round"/>
-              <path d="M185 170 Q198 166 210 174" stroke="#1a0800" stroke-width="4" fill="none" stroke-linecap="round"/>
-
-              <!-- Nose - cute small -->
-              <path d="M163 215 Q170 226 177 215" fill="none" stroke="#c09070" stroke-width="2.5" stroke-linecap="round"/>
-              <ellipse cx="160" cy="222" rx="5" ry="3.5" fill="#c09070" opacity="0.35"/>
-              <ellipse cx="180" cy="222" rx="5" ry="3.5" fill="#c09070" opacity="0.35"/>
-
-              <!-- Mouth - gentle smile -->
-              <path d="M152 242 Q170 258 188 242" fill="none" stroke="#b07060" stroke-width="3" stroke-linecap="round"/>
-              <path d="M152 242 Q155 250 160 248" fill="none" stroke="#b07060" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-              <path d="M180 248 Q185 250 188 242" fill="none" stroke="#b07060" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-
-              <!-- Jacket badge/patch - angular logo -->
-              <rect x="210" y="370" width="22" height="26" rx="4" fill="rgba(99,202,255,0.2)" stroke="rgba(99,202,255,0.4)" stroke-width="1"/>
-              <text x="221" y="387" font-family="monospace" font-size="11" fill="rgba(99,202,255,0.9)" text-anchor="middle">A</text>
-            </g>
-
-            <!-- Glow ring accent on edge -->
-            <circle cx="170" cy="190" r="165" fill="none" stroke="url(#tealRing)" stroke-width="1.5" opacity="0.4"/>
-            <defs>
-              <linearGradient id="tealRing" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="transparent"/>
-                <stop offset="40%" stop-color="rgba(99,202,255,0.6)"/>
-                <stop offset="100%" stop-color="transparent"/>
-              </linearGradient>
-            </defs>
-          </svg>
+      <div class="code-editor-wrap" style="position:relative; width:380px; height:340px; background:var(--bg2); border:1px solid var(--border); border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.6); overflow:hidden; z-index:2;">
+        <div style="display:flex; align-items:center; gap:6px; padding:12px 16px; background:rgba(255,255,255,0.02); border-bottom:1px solid var(--border);">
+          <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div>
+          <div style="margin-left:8px;font-size:12px;color:var(--text3);font-family:var(--ff-mono);">cinesense.py</div>
         </div>
-        <div class="float-badge fb1">🐍 Python</div>
-        <div class="float-badge fb2">☁️ AWS</div>
-        <div class="float-badge fb3">🤖 AI/ML</div>
-        <div class="float-badge fb4">⚛ React</div>
+        <div style="padding:20px; font-family:var(--ff-mono); font-size:13px; line-height:1.7; color:var(--text2); overflow-y:hidden;">
+          <span style="color:#c678dd;">from</span> <span style="color:#e5c07b;">fastapi</span> <span style="color:#c678dd;">import</span> FastAPI<br>
+          <span style="color:#c678dd;">import</span> faiss<br>
+          <span style="color:#c678dd;">from</span> sentence_transformers <span style="color:#c678dd;">import</span> SentenceTransformer<br><br>
+          app = <span style="color:#e5c07b;">FastAPI</span>()<br>
+          model = <span style="color:#e5c07b;">SentenceTransformer</span>(<span style="color:#98c379;">'all-MiniLM-L6-v2'</span>)<br><br>
+          <span style="color:#c678dd;">@app.post</span>(<span style="color:#98c379;">"/recommend"</span>)<br>
+          <span style="color:#c678dd;">async def</span> <span style="color:#61afef;">get_movies</span>(mood: <span style="color:#e5c07b;">str</span>):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;embedding = model.<span style="color:#61afef;">encode</span>(mood)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span id="codeTypewriter"></span><span style="animation:blink 1s step-end infinite;color:var(--teal)">█</span>
+        </div>
       </div>
+      <div class="avatar-glow" style="position:absolute; width:400px; height:400px; right:0; top:10%; background:radial-gradient(circle, rgba(34,211,238,0.15) 0%, transparent 60%); z-index:1; animation:pulse-glow 4s ease-in-out infinite;"></div>
+    </div>
     </div>
   </div>
 </div>
@@ -1235,8 +1167,8 @@
 
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm <strong>Ankit Mishra</strong>, a passionate AI &amp; Full Stack developer in my 3rd year of B.Tech CSE (Artificial Intelligence) at <strong>Parul University, Vadodara</strong> with a <strong>CGPA of 8.4</strong>.</p>
-        <p>I build end-to-end systems — clean, responsive frontends to intelligent AI-powered backends. Currently deepening my Full Stack skills on Udemy. I thrive on turning complex problems into elegant, scalable solutions.</p>
+        <p>I'm <strong>Ankit Mishra</strong>, a passionate AI &amp; Full Stack developer in my 4th year of B.Tech CSE (Artificial Intelligence) at <strong>Parul University, Vadodara</strong> with a <strong>CGPA of 8.45</strong>.</p>
+        <p>I build end-to-end systems — clean, responsive frontends to intelligent AI-powered backends. Currently deepening full-stack skills + shipping CineSense AI. I thrive on turning complex problems into elegant, scalable solutions.</p>
         <p>Whether it's a robo-advisory system, a data analysis tool, or a marketplace app — <strong>I ship real products, not just demos.</strong></p>
 
         <div class="info-chips">
@@ -1257,11 +1189,11 @@
           </div>
           <pre class="code-body"><span class="c-brace">{</span>
   <span class="c-key">"name"</span>: <span class="c-str">"Ankit Mishra"</span>,
-  <span class="c-key">"role"</span>: <span class="c-str">"AI Engineer + Full Stack Dev"</span>,
+  <span class="c-key">"role"</span>: <span class="c-str">"AI Engineer + Full-Stack Dev"</span>,
   <span class="c-key">"university"</span>: <span class="c-str">"Parul University"</span>,
-  <span class="c-key">"cgpa"</span>: <span class="c-num">8.4</span>,
-  <span class="c-key">"year"</span>: <span class="c-num">3</span>,
-  <span class="c-key">"status"</span>: <span class="c-str">"Seeking Internship"</span>,
+  <span class="c-key">"cgpa"</span>: <span class="c-num">8.45</span>,
+  <span class="c-key">"year"</span>: <span class="c-num">4</span>,
+  <span class="c-key">"status"</span>: <span class="c-str">"Open to Internships & Full-Time"</span>,
   <span class="c-key">"certs"</span>: <span class="c-num">15</span><span class="c-str">+</span>,
   <span class="c-key">"openToWork"</span>: <span class="c-bool">true</span>,
   <span class="c-key">"mindset"</span>: <span class="c-str">"Build. Ship. Repeat."</span>
@@ -1377,21 +1309,76 @@
 
     <div class="proj-filters">
       <button class="pfil active" data-f="all">All</button>
-      <button class="pfil" data-f="ai">AI / ML</button>
+      <button class="pfil" data-f="ai">AI-ML</button>
       <button class="pfil" data-f="fullstack">Full Stack</button>
       <button class="pfil" data-f="data">Data</button>
+      <button class="pfil" data-f="security">Security</button>
       <button class="pfil" data-f="game">Games</button>
     </div>
 
     <div class="proj-grid" id="projGrid">
       <div class="proj-card featured" data-cat="ai fullstack">
         <div class="proj-feat-badge">⭐ Featured Project</div>
+        <h3 class="proj-title">CineSense AI</h3>
+        <p class="proj-desc">Mood-first movie recommendation platform — describe your mood in natural language and get films matched by semantic + sentiment similarity, not just genre tags.</p>
+        <div class="proj-tags"><span>FastAPI</span><span>PostgreSQL</span><span>FAISS</span><span>React</span></div>
+        <a href="https://github.com/ankitrmishra01/CineSense-AI" target="_blank" class="proj-link-btn">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View Repo ↗
+        </a>
+      </div>
+
+      <div class="proj-card featured" data-cat="ai data">
+        <div class="proj-feat-badge">⭐ Featured Project</div>
+        <h3 class="proj-title">Codeforces Analytics Dashboard</h3>
+        <p class="proj-desc">Competitive-programming performance tracker that layers NLP sentiment analysis on top of Codeforces contest/submission data — visual dashboards on rating trends.</p>
+        <div class="proj-tags"><span>FastAPI</span><span>SQLite</span><span>NLTK</span><span>React</span></div>
+        <a href="https://github.com/ankitrmishra01/cp-analytics-dashboard" target="_blank" class="proj-link-btn">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View Repo ↗
+        </a>
+      </div>
+
+      <div class="proj-card featured" data-cat="ai fullstack">
+        <div class="proj-feat-badge">⭐ Featured Project</div>
+        <h3 class="proj-title">GreenLens</h3>
+        <p class="proj-desc">Campus sustainability app — track personal carbon footprint, compete with peers on leaderboards, and get AI-generated tips to reduce impact.</p>
+        <div class="proj-tags"><span>React</span><span>FastAPI</span><span>Neon Postgres</span><span>Gemini AI</span></div>
+        <a href="https://github.com/ankitrmishra01/GreenLens" target="_blank" class="proj-link-btn">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View Repo ↗
+        </a>
+      </div>
+
+      <div class="proj-card" data-cat="ai security">
+        <h3 class="proj-title">OpenTrace</h3>
+        <p class="proj-desc">Ethical OSINT / cyber-risk analyzer that scans a user's digital footprint and reports exposure risks and cybersecurity awareness tips in plain language.</p>
+        <div class="proj-tags"><span>React</span><span>Express</span><span>MongoDB</span><span>Groq AI</span></div>
+        <a href="https://github.com/ankitrmishra01/OpenTrace" target="_blank" class="proj-link-btn">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View Repo ↗
+        </a>
+      </div>
+
+      <div class="proj-card" data-cat="ai">
+        <div style="font-size:11px;font-family:var(--ff-mono);color:var(--emerald);background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:4px 10px;border-radius:100px;width:fit-content;margin-bottom:16px;">🤝 Collaborative Project</div>
+        <h3 class="proj-title">FairScan</h3>
+        <p class="proj-desc">AI-powered bias-auditing tool that scans datasets for demographic disparities and explains the findings in plain English.</p>
+        <div class="proj-tags"><span>JavaScript</span><span>Gemini AI</span></div>
+        <a href="https://github.com/ankitrmishra01/FairScan" target="_blank" class="proj-link-btn">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View Repo ↗
+        </a>
+      </div>
+
+      <div class="proj-card featured" data-cat="ai fullstack">
+        <div class="proj-feat-badge">⭐ Featured Project</div>
         <h3 class="proj-title">Cresta — Robo Advisory System</h3>
         <p class="proj-desc">AI-powered investment advisory platform with automated portfolio management, real-time market data, backtesting engine, risk profiling, and algorithmic trading strategies. React frontend + Python/Django backend.</p>
-        <div class="proj-tags"><span>React</span><span>Python</span><span>Django</span><span>AI Models</span><span>Backtesting</span><span>Finance API</span></div>
+        <div class="proj-tags"><span>React</span><span>Python</span><span>Django</span><span>AI Models</span></div>
         <a href="https://github.com/ankitrmishra01/MINOR_PROJECT_THE_ORIGINALS" target="_blank" class="proj-link-btn">
           <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View Code
+          View Repo ↗
         </a>
       </div>
 
@@ -1401,7 +1388,7 @@
         <div class="proj-tags"><span>Python</span><span>Pandas</span><span>Data Viz</span><span>F1 API</span></div>
         <a href="https://github.com/ankitrmishra01" target="_blank" class="proj-link-btn">
           <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View Code
+          View Repo ↗
         </a>
       </div>
 
@@ -1412,7 +1399,7 @@
         <div class="proj-tags"><span>Django</span><span>Bootstrap</span><span>ML APIs</span></div>
         <a href="https://github.com/ankitrmishra01" target="_blank" class="proj-link-btn">
           <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View Code
+          View Repo ↗
         </a>
       </div>
 
@@ -1422,28 +1409,36 @@
         <div class="proj-tags"><span>JavaScript</span><span>HTML/CSS</span><span>Marketplace</span></div>
         <a href="https://github.com/ankitrmishra01/AutoMax" target="_blank" class="proj-link-btn">
           <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View Code
+          View Repo ↗
         </a>
       </div>
+    </div>
 
-      <div class="proj-card" data-cat="ai fullstack">
-        <h3 class="proj-title">Movie Recommendation Engine</h3>
-        <p class="proj-desc">Content-based + collaborative filtering system. Suggests movies based on user preferences using similarity matching and ML data pipelines.</p>
-        <div class="proj-tags"><span>Flask</span><span>Python</span><span>ML</span><span>Bootstrap</span></div>
-        <a href="https://github.com/ankitrmishra01" target="_blank" class="proj-link-btn">
-          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View Code
-        </a>
-      </div>
-
-      <div class="proj-card" data-cat="game">
-        <h3 class="proj-title">Mini Games Collection</h3>
-        <p class="proj-desc">Suite of interactive games — Snake, Tic Tac Toe, and Imposter. Built in Python and JavaScript to sharpen logic, game loop design, and UI skills.</p>
-        <div class="proj-tags"><span>Python</span><span>JavaScript</span><span>Game Dev</span></div>
-        <a href="https://github.com/ankitrmishra01/source-code-of-games" target="_blank" class="proj-link-btn">
-          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View Code
-        </a>
+    <!-- Older Projects Accordion -->
+    <div style="margin-top: 40px; text-align: center;">
+      <button id="olderProjectsBtn" class="btn-outline" style="font-size: 13px;">View Older Projects ▼</button>
+    </div>
+    
+    <div id="olderProjectsContainer" style="display: none; margin-top: 24px;">
+      <div class="proj-grid">
+        <div class="proj-card" data-cat="ai fullstack">
+          <h3 class="proj-title">Movie Recommendation Engine</h3>
+          <p class="proj-desc">Content-based + collaborative filtering system. Suggests movies based on user preferences using similarity matching and ML data pipelines.</p>
+          <div class="proj-tags"><span>Flask</span><span>Python</span><span>ML</span><span>Bootstrap</span></div>
+          <a href="https://github.com/ankitrmishra01" target="_blank" class="proj-link-btn">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Repo ↗
+          </a>
+        </div>
+        <div class="proj-card" data-cat="game">
+          <h3 class="proj-title">Mini Games Collection</h3>
+          <p class="proj-desc">Suite of interactive games — Snake, Tic Tac Toe, and Imposter. Built in Python and JavaScript to sharpen logic, game loop design, and UI skills.</p>
+          <div class="proj-tags"><span>Python</span><span>JavaScript</span><span>Game Dev</span></div>
+          <a href="https://github.com/ankitrmishra01/source-code-of-games" target="_blank" class="proj-link-btn">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Repo ↗
+          </a>
+        </div>
       </div>
     </div>
 

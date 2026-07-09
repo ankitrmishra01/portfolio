@@ -85,6 +85,42 @@ function closeMobileMenu() {
   mobOverlay.classList.remove('open');
 }
 
+// Canvas particles removed to prevent null reference error
+
+// ===== SCROLL PROGRESS & BACK TO TOP =====
+const progressBar = document.getElementById('progressBar');
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+pages.forEach(page => {
+  page.addEventListener('scroll', () => {
+    if (!page.classList.contains('active')) return;
+    
+    // Progress Bar
+    const scrollTop = page.scrollTop;
+    const scrollHeight = page.scrollHeight - page.clientHeight;
+    const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    if (progressBar) progressBar.style.width = scrollPercent + '%';
+
+    // Back to top button
+    if (backToTopBtn) {
+      if (scrollTop > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    }
+  });
+});
+
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', () => {
+    const activePage = document.querySelector('.page.active');
+    if (activePage) {
+      gsap.to(activePage, { scrollTop: 0, duration: 0.6, ease: "power2.out" });
+    }
+  });
+}
+
 // ===== CUSTOM CURSOR =====
 const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
@@ -119,13 +155,9 @@ document.querySelectorAll('a, button, .proj-card, .cert-card, .ach-card, .skill-
 
 // ===== TYPING EFFECT =====
 const phrases = [
-  'AI Engineer in Progress',
-  'Full Stack Developer',
-  'Python & Django Builder',
-  'Cloud & AWS Enthusiast',
-  'React Developer (Learning)',
-  'Hackathon Competitor 🏆',
-  'Turning Ideas into Products'
+  'AI Engineer',
+  'Full-Stack Developer',
+  'Competitive Programmer'
 ];
 const typeEl = document.getElementById('typeText');
 let pi = 0, ci = 0, del = false;
@@ -143,6 +175,38 @@ function type() {
   setTimeout(type, wait);
 }
 type();
+
+// ===== CODE EDITOR TYPING EFFECT =====
+const codePhrases = [
+  "return await collection.find(query).limit(10)",
+  "return get_recommendations(embedding)",
+  "data.sort_values(by='rating', ascending=False)"
+];
+const codeTypeEl = document.getElementById('codeTypewriter');
+if (codeTypeEl) {
+  let cpi = 0;
+  function typeCode() {
+    gsap.to(codeTypeEl, {
+      duration: 2,
+      text: codePhrases[cpi],
+      ease: "none",
+      onComplete: () => {
+        setTimeout(() => {
+          gsap.to(codeTypeEl, {
+            duration: 1,
+            text: "",
+            ease: "none",
+            onComplete: () => {
+              cpi = (cpi + 1) % codePhrases.length;
+              setTimeout(typeCode, 500);
+            }
+          });
+        }, 3000);
+      }
+    });
+  }
+  setTimeout(typeCode, 1000);
+}
 
 // ===== SKILL BARS (WORKING - animate on tab click & page load) =====
 function animateActiveBars() {
@@ -175,7 +239,7 @@ stabs.forEach(btn => {
   });
 });
 
-// ===== PROJECT FILTER (WORKING) =====
+// ===== PROJECT FILTER (GSAP fade+scale) =====
 const pfils = document.querySelectorAll('.pfil');
 const projCards = document.querySelectorAll('.proj-card');
 
@@ -187,14 +251,64 @@ pfils.forEach(btn => {
 
     projCards.forEach(card => {
       const cats = card.dataset.cat || '';
-      if (f === 'all' || cats.includes(f)) {
-        card.classList.remove('hidden');
+      const isVisible = (f === 'all' || cats.includes(f));
+      
+      if (isVisible) {
+        if (card.classList.contains('hidden')) {
+          card.classList.remove('hidden');
+          gsap.fromTo(card, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" });
+        }
       } else {
         card.classList.add('hidden');
       }
     });
   });
 });
+
+// ===== OLDER PROJECTS ACCORDION =====
+const olderProjectsBtn = document.getElementById('olderProjectsBtn');
+const olderProjectsContainer = document.getElementById('olderProjectsContainer');
+if (olderProjectsBtn && olderProjectsContainer) {
+  olderProjectsBtn.addEventListener('click', () => {
+    const isHidden = olderProjectsContainer.style.display === 'none';
+    if (isHidden) {
+      olderProjectsContainer.style.display = 'block';
+      olderProjectsBtn.innerHTML = 'Hide Older Projects ▲';
+      gsap.fromTo(olderProjectsContainer, { opacity: 0, height: 0 }, { opacity: 1, height: 'auto', duration: 0.5, ease: "power2.out" });
+    } else {
+      gsap.to(olderProjectsContainer, { opacity: 0, height: 0, duration: 0.4, ease: "power2.in", onComplete: () => {
+        olderProjectsContainer.style.display = 'none';
+        olderProjectsBtn.innerHTML = 'View Older Projects ▼';
+      }});
+    }
+  });
+}
+
+// ===== GSAP COUNTER ANIMATION (Hero Stats) =====
+function animateCounters() {
+  const statNums = document.querySelectorAll('.stat-num');
+  statNums.forEach(num => {
+    const val = parseFloat(num.innerText);
+    if (!isNaN(val)) {
+      const suffix = num.innerText.replace(/[0-9.]/g, '');
+      const isFloat = num.innerText.includes('.');
+      
+      gsap.fromTo(num, 
+        { innerText: 0 },
+        {
+          innerText: val,
+          duration: 2,
+          ease: "power2.out",
+          snap: { innerText: isFloat ? 0.01 : 1 },
+          onUpdate: function() {
+            num.innerText = (isFloat ? Number(this.targets()[0].innerText).toFixed(2) : Math.round(this.targets()[0].innerText)) + suffix;
+          }
+        }
+      );
+    }
+  });
+}
+setTimeout(animateCounters, 500);
 
 // ===== CERT FILTER (WORKING) =====
 const cfils = document.querySelectorAll('.cfil');
