@@ -35,7 +35,7 @@ function showPage(name) {
   const target = document.getElementById('pg-' + name);
   if (target) {
     target.classList.add('active');
-    window.scrollTo(0, 0);
+    target.scrollTo(0, 0);
   }
 
   // Highlight nav btn
@@ -122,8 +122,8 @@ if (backToTopBtn) {
 }
 
 // ===== CUSTOM CURSOR =====
-const cursor = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursorRing');
+const cursor = document.getElementById('cur');
+const cursorRing = document.getElementById('cur-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
 
 document.addEventListener('mousemove', e => {
@@ -380,3 +380,44 @@ if (particlesEl) {
 // ===== INIT =====
 // Start on home, animate bars when skills first visited
 showPage('home');
+
+// ===== CERT FILTERS =====
+document.querySelectorAll('.cfil').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cfil').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.cf;
+    document.querySelectorAll('.cert-card').forEach(card => {
+      if (f === 'all' || card.dataset.cc === f) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// ===== CONTACT FORM =====
+const sendBtn = document.getElementById('sendBtn');
+if (sendBtn) {
+  sendBtn.addEventListener('click', () => {
+    const n = document.getElementById('fName').value.trim();
+    const e = document.getElementById('fEmail').value.trim();
+    const m = document.getElementById('fMsg').value.trim();
+    if (!n || !e || !m) { showToast('Please fill required fields ✦'); return; }
+    showToast('Message sent! I\'ll get back to you soon 🚀');
+    document.getElementById('fName').value = '';
+    document.getElementById('fEmail').value = '';
+    document.getElementById('fSubj').value = '';
+    document.getElementById('fMsg').value = '';
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  if (t) {
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+}

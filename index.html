@@ -1134,15 +1134,12 @@
     </div>
 
     <div class="home-right">
-          model = <span style="color:#e5c07b;">SentenceTransformer</span>(<span style="color:#98c379;">'all-MiniLM-L6-v2'</span>)<br><br>
-          <span style="color:#c678dd;">@app.post</span>(<span style="color:#98c379;">"/recommend"</span>)<br>
-          <span style="color:#c678dd;">async def</span> <span style="color:#61afef;">get_movies</span>(mood: <span style="color:#e5c07b;">str</span>):<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;embedding = model.<span style="color:#61afef;">encode</span>(mood)<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span id="codeTypewriter"></span><span style="animation:blink 1s step-end infinite;color:var(--teal)">█</span>
-        </div>
+      <div class="hero-img-wrap">
+        <div class="orb o1"></div>
+        <div class="orb o2"></div>
+        <div class="orb o3"></div>
+        <img src="assets/avatar.png" alt="Ankit Mishra" class="avatar" />
       </div>
-      <div class="avatar-glow" style="position:absolute; width:400px; height:400px; right:0; top:10%; background:radial-gradient(circle, rgba(34,211,238,0.15) 0%, transparent 60%); z-index:1; animation:pulse-glow 4s ease-in-out infinite;"></div>
-    </div>
     </div>
   </div>
 </div>
@@ -1580,155 +1577,6 @@
 
 <div class="toast" id="toast"></div>
 
-<script>
-// ── PAGE ROUTING ──
-const pages = ['home','about','skills','projects','certs','contact'];
-let currentPage = 'home';
-
-function showPage(id) {
-  // Hide current
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn, .mob-nav-btn').forEach(b => b.classList.remove('active'));
-
-  // Show target
-  const page = document.getElementById('pg-' + id);
-  if (page) {
-    page.classList.add('active');
-    page.scrollTop = 0;
-  }
-
-  // Update nav buttons
-  document.querySelectorAll(`[data-page="${id}"]`).forEach(b => b.classList.add('active'));
-  currentPage = id;
-
-  // Close mobile menu
-  document.getElementById('mobMenu').classList.remove('open');
-
-  // Animate skill bars when skills page opens
-  if (id === 'skills') {
-    setTimeout(animateBars, 200);
-  }
-}
-
-// ── NAV BUTTONS ──
-document.querySelectorAll('.nav-btn, .mob-nav-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const pg = btn.dataset.page;
-    if (pg) showPage(pg);
-  });
-});
-
-// ── MOBILE MENU ──
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobMenu').classList.toggle('open');
-});
-document.getElementById('mobClose').addEventListener('click', () => {
-  document.getElementById('mobMenu').classList.remove('open');
-});
-
-// ── TYPEWRITER ──
-const roles = ['AI Engineer', 'Full Stack Developer', 'Python Developer', 'ML Enthusiast', 'Cloud Practitioner'];
-let ri = 0, ci = 0, deleting = false;
-const el = document.getElementById('typeText');
-function typewrite() {
-  const word = roles[ri];
-  if (!deleting) {
-    el.textContent = word.slice(0, ++ci);
-    if (ci === word.length) { deleting = true; setTimeout(typewrite, 1800); return; }
-  } else {
-    el.textContent = word.slice(0, --ci);
-    if (ci === 0) { deleting = false; ri = (ri+1) % roles.length; }
-  }
-  setTimeout(typewrite, deleting ? 60 : 90);
-}
-typewrite();
-
-// ── SKILL BARS ──
-function animateBars() {
-  document.querySelectorAll('#pg-skills .si-fill').forEach(bar => {
-    const w = bar.dataset.w;
-    bar.style.width = w + '%';
-  });
-}
-
-// ── SKILLS TABS ──
-document.querySelectorAll('.stab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.stab-panel').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('stab-' + tab.dataset.tab).classList.add('active');
-    setTimeout(animateBars, 100);
-  });
-});
-
-// ── PROJECT FILTERS ──
-document.querySelectorAll('.pfil').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.pfil').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.f;
-    document.querySelectorAll('.proj-card').forEach(card => {
-      if (f === 'all' || card.dataset.cat?.includes(f)) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-});
-
-// ── CERT FILTERS ──
-document.querySelectorAll('.cfil').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.cfil').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.cf;
-    document.querySelectorAll('.cert-card').forEach(card => {
-      if (f === 'all' || card.dataset.cc === f) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-});
-
-// ── CONTACT FORM ──
-document.getElementById('sendBtn').addEventListener('click', () => {
-  const n = document.getElementById('fName').value.trim();
-  const e = document.getElementById('fEmail').value.trim();
-  const m = document.getElementById('fMsg').value.trim();
-  if (!n || !e || !m) { showToast('Please fill required fields ✦'); return; }
-  showToast('Message sent! I\'ll get back to you soon 🚀');
-  document.getElementById('fName').value = '';
-  document.getElementById('fEmail').value = '';
-  document.getElementById('fSubj').value = '';
-  document.getElementById('fMsg').value = '';
-});
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3500);
-}
-
-// ── CURSOR ──
-const cur = document.getElementById('cur');
-const ring = document.getElementById('cur-ring');
-document.addEventListener('mousemove', e => {
-  cur.style.left = e.clientX + 'px';
-  cur.style.top = e.clientY + 'px';
-  setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 60);
-});
-document.querySelectorAll('a,button').forEach(el => {
-  el.addEventListener('mouseenter', () => { cur.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.opacity = '1'; ring.style.transform = 'translate(-50%,-50%) scale(1.5)'; });
-  el.addEventListener('mouseleave', () => { cur.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.opacity = '0.5'; ring.style.transform = 'translate(-50%,-50%) scale(1)'; });
-});
-
-// Initial bar animation if landing on skills
-if (currentPage === 'skills') animateBars();
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
